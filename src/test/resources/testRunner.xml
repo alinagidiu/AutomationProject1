@@ -16,6 +16,13 @@
             </class>
         </classes>
     </test>
+    <test name="SimpleTest">
+        <classes>
+            <class name="SimpleTest">
+
+            </class>
+        </classes>
+    </test>
 
 </suite>
 
