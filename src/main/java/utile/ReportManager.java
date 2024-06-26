@@ -21,4 +21,8 @@ public class ReportManager {
     public static ExtentTest createTest(String testName) {
         return getInstance().createTest(testName);
     }
+
+    public static void compileReport() {
+        getInstance().flush();
+    }
 }

@@ -8,6 +8,13 @@
             </class>
         </classes>
     </test>
+    <test name="Register User">
+        <classes>
+            <class name="tests.RegisterUser">
+
+            </class>
+        </classes>
+    </test>
 
 </suite>
 

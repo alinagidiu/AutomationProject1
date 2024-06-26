@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -66,5 +67,13 @@ public class BaseTest {
         }
         // Capture and save screenshot
         screenshotUtils.captureAndSaveScreenshot(testName);
+    }
+
+    @AfterSuite
+    public void compileReport(){
+        ReportManager.getInstance().flush();
+    }
+    public void initTest1(String testName1) {
+        extentTest = ReportManager.createTest(testName1);
     }
 }
