@@ -1,9 +1,24 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="SeleniumTestSuite">
-    <test name="SimpleTest">
+    <!-- <test name="SimpleTest">
         <classes>
             <class name="SimpleTest">
+
+            </class>
+        </classes>
+    </test>
+   <test name="Register User">
+        <classes>
+            <class name="tests.RegisterUser">
+
+            </class>
+        </classes>
+    </test>
+    -->!
+    <test name="Login Trainer">
+        <classes>
+            <class name="tests.LoginTrainer">
 
             </class>
         </classes>
