@@ -4,8 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
+// identifica elementele necesare
 public class LoginElements {
-    private WebDriver driver = null;
+    private WebDriver driver = null;//obiect driver de tip WebDriver
     public LoginElements(WebDriver driver){
         this.driver = driver;
     }
@@ -16,11 +18,15 @@ public class LoginElements {
         return driver.findElement(By.cssSelector("#userEmail"));
     }
     public WebElement userPassword(){
+
         return driver.findElement(By.cssSelector("#userPassword"));
     }
-    public WebElement userButton(){
+    public WebElement submitButton(){
+
         return driver.findElement(By.cssSelector("#submitButton"));
     }
-    //facem in clasa de login
-    //dupa in clasa de register user face o clasa de login  unde facem cu parola si emailu la login
+
+
+    public WebElement errorForbiddenAccess(){return driver.findElement(By.cssSelector("#errorForbiddenAccess"));}
 }
+
