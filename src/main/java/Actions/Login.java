@@ -28,6 +28,7 @@ public class Login {
         element.userEmail().sendKeys(userEmail);
     }
     public void enterPassword(String password){
+
         element.userPassword().sendKeys(password);
     }
     public void clickSubmitButton(){
