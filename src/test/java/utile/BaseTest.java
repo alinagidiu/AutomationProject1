@@ -1,9 +1,13 @@
 package utile;
 
+import Pages.HomePage;
+import Pages.OverviewPage;
+import Pages.RegisterPage;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import hometests.LoginTests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,19 +18,33 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 
 public class BaseTest {
     public WebDriver driver;
+    protected HomePage homePage;
+    protected OverviewPage overviewPage;
+    protected RegisterPage registerPage;
+    protected LoginTests loginTest;
     private ExtentTest extentTest;
     private ScreenshotUtils screenshotUtils;
 
+
     @BeforeClass
     public void setupClass() {
+        ConfigLoader configLoader = new ConfigLoader("src/test/resources/proprietati/url.properties");//se face instanta de ConfigLoader
+        String url= configLoader.getProperty("url");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);//nu mergea selectia de dropdown fara
         screenshotUtils = new ScreenshotUtils(driver);
-        driver.get("http://apptest.go.ro:9999/login");
+
+        driver.get(url);
+
+        homePage = new HomePage(driver);
+        overviewPage = new OverviewPage(driver);
+        registerPage = new RegisterPage(driver);
     }
 
     @AfterClass

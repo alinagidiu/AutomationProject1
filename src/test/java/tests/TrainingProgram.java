@@ -4,18 +4,9 @@ import Actions.Dashboard;
 import Actions.Login;
 import Actions.Register;
 import Actions.Training;
-import WebElements.TrainingElements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import utile.BaseTest;
 import utile.ConfigLoader;
-
-import java.time.Duration;
-
-import static com.google.common.base.Ascii.equalsIgnoreCase;
 
 public class TrainingProgram extends BaseTest {
     private Login login = null;
